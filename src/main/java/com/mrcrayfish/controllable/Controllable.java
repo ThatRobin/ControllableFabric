@@ -84,7 +84,6 @@ public class Controllable implements ClientModInitializer, ModInitializer
         private static boolean hasPoppedUp = false;
         @SubscribeEvent
         public static void render(TitleScreenRenderEvent a) {
-            System.out.println(a);
             if (!hasPoppedUp) {
                 Minecraft.getInstance().getToasts().addToast(new CannotFindControllableToast());
                 hasPoppedUp = true;
@@ -120,7 +119,7 @@ public class Controllable implements ClientModInitializer, ModInitializer
             return;
         }
         try {
-            System.out.println(ControllableJarFinder.findJar());
+            ControllableJarFinder.findJar();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
